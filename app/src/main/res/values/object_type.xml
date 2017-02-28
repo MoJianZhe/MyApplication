@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="objectType">
+        <item>Document</item>
+        <item>CAE</item>
+        <item>BoundaryConditions</item>
+        <item>Geometry</item>
+        <item>Mesh</item>
+        <item>Results</item>
+        <item>Design</item>
+        <item>Drawing</item>
+        <item>CustomerDrawing</item>
+        <item>SupplierDrawing</item>
+        <item>FMEA</item>
+        <item>FreeCAD</item>
+        <item>Patent</item>
+        <item>Sketch</item>
+        <item>OfficeDocument</item>
+        <item>Part</item>
+        <item>Assembly</item>
+        <item>CentralUnit</item>
+        <item>ComputerSet</item>
+        <item>OtherAssembly</item>
+        <item>BiosOs</item>
+        <item>SinglePart</item>
+        <item>ElectronicPart</item>
+        <item>HardDisk</item>
+        <item>KeyBoard</item>
+        <item>MechanicalPart</item>
+        <item>MotherBoard</item>
+        <item>Mouse</item>
+        <item>RAM</item>
+        <item>Screen</item>
+    </string-array>
+</resources>

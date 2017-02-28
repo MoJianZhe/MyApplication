@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/test"
+        android:title="ceshi"
+        android:showAsAction="always|withText"
+        android:icon="@android:drawable/ic_menu_add"></item>
+    <item
+        android:id="@+id/test2"
+        android:title="hello"
+        android:showAsAction="always|withText"
+        android:icon="@android:drawable/ic_input_get"></item>
+</menu>

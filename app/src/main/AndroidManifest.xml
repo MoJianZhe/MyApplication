@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dyoon.myapplication">
+
+    <application
+        android:name=".ui.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.SecondActivity"></activity>
+        <activity android:name=".ui.PopupWindow"></activity>
+        <activity android:name=".ui.Expandable"></activity>
+        <activity android:name=".ui.DownLoadActivity"></activity>
+        <activity android:name=".ui.ViewTestActivity"></activity>
+        <activity android:name=".ui.LinearoutActivity"></activity>
+        <activity android:name=".ui.ViewPagerActivity"
+                    android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
+        <activity android:name=".ui.RecyclerViewActivity"></activity>
+        <activity android:name=".ui.ActionModeActivity"></activity>
+        <activity android:name=".ui.AnimationActivity"></activity>
+        <activity android:name=".ui.AddActivity"
+            ></activity>
+        <activity android:name=".ui.ListenerActivity"></activity>
+        <activity android:name=".ui.PropertyAnimationActivity"></activity>
+        <activity android:name=".ui.listview.ImageListActivity"></activity>
+        <activity android:name=".ui.listview.LoadMoreActivity"></activity>
+        <activity android:name=".ui.listview.IndexListViewActivity"></activity>
+
+        <service android:name=".service.ServiceTest"></service>
+        <service android:name=".service.MyIntentService"></service>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>
