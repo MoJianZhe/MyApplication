@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
+ * 一般onCreate和onDestroy只调用一次
+ * 当用户回到原来的Activity时 onRestart->onStart->onResume
+ *
  * Created by jun on 2017/1/11.
  */
 
@@ -13,7 +16,7 @@ public class TheLifeCycleOfActivity extends Activity {
         super.onCreate(savedInstanceState);
     }
 
-    @Override//可见(一般是在栈顶)
+    @Override//可见(一般是在栈顶),onSTart完成后，页面才可见
     protected void onStart() {
         super.onStart();
     }

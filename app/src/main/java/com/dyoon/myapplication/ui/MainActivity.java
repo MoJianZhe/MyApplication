@@ -96,6 +96,8 @@ public class    MainActivity extends AppCompatActivity
     private Button loadMore;
     @ViewInject(R.id.btn_index_list)
     private Button indexListView;
+    @ViewInject(R.id.btn_lifecycleTest_activity)
+    private Button lifecycleTestActiviity;
     private Handler handler = new Handler() {
 
 /*        @Override
@@ -545,4 +547,12 @@ public class    MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, IndexListViewActivity.class);
         startActivity(intent);
     }
+
+    @Event(value = R.id.btn_lifecycleTest_activity)
+    private void lifecleClick(View view) {
+        Intent intent = new Intent(this, LifecycleOfActivityTest.class);
+        startActivity(intent);
+    }
+
 }
+
