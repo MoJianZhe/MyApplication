@@ -87,6 +87,11 @@ public class TestViewMearsure extends View {
 
     }*/
 
+    /**
+     *
+     * @param widthMeasureSpec
+     * @param heightMeasureSpec
+     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
            Log.i(TAG, "onMeasure: ");
@@ -97,7 +102,7 @@ public class TestViewMearsure extends View {
 
     //通过模式，给出不同的测量值,wrap_content的时候起作用
     public static int measureSize( int measureSpec) {
-        int result=200;
+        int result=1440;
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize = MeasureSpec.getSize(measureSpec);
         switch (specMode) {
@@ -107,8 +112,8 @@ public class TestViewMearsure extends View {
             case MeasureSpec.EXACTLY://写死dp或者match_parent
                 result=specSize;
                 break;
-            case MeasureSpec.UNSPECIFIED://未指定
-                result=200;
+            case MeasureSpec.UNSPECIFIED://未指定，一般用不上，系统内容
+                result=1440;
                 break;
             default:
                 break;

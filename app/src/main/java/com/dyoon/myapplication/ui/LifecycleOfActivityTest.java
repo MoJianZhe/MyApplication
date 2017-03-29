@@ -13,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dyoon.myapplication.R;
 
@@ -73,6 +74,30 @@ public class LifecycleOfActivityTest extends Activity {
         dataList.add("c");
         dataList.add("python");
 
+    }
+
+    @Override
+    protected void onPause() {
+        Log.i(TAG, "onPause: ");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(TAG, "onStop: ");
+        Toast.makeText(this, "OnStop方法执行中", Toast.LENGTH_LONG).show();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy: ");
+        this.test();
+    }
+
+    private void test() {
+        Log.i(TAG, "test: "+"先死还是先destroy呢？");
     }
 
     private class ThisAdapter extends BaseAdapter{

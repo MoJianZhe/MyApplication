@@ -24,9 +24,26 @@ public class ListenerActivity extends Activity implements View.OnTouchListener{
     private Button listener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "onCreate: ");
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            String test = savedInstanceState.getString("name");
+            Log.i(TAG, "onCreate: " + test);
+        }
         x.view().inject(this);
         listener.setOnTouchListener(this    );
+    }
+
+    @Override
+    protected void onStart() {
+        Log.i(TAG, "onStart: ");
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.i(TAG, "onResume: ");
+        super.onResume();
     }
 
     @Override
@@ -42,5 +59,19 @@ public class ListenerActivity extends Activity implements View.OnTouchListener{
                     break;
             }
         return false;//拦截事件
+    }
+
+    @Override//异常情况，保存数据的方法
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("name","LaoLi");
+    }
+
+    @Override//异常回复数据的方法
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String name = savedInstanceState.getString("name");
+        Log.i(TAG, "onRestoreInstanceState: " + name);
+
     }
 }

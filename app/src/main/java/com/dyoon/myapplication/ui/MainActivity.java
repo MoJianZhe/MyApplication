@@ -27,6 +27,7 @@ import com.dyoon.myapplication.presente.MainPresenter;
 import com.dyoon.myapplication.presente.Presenter;
 import com.dyoon.myapplication.service.MyIntentService;
 import com.dyoon.myapplication.service.ServiceTest;
+import com.dyoon.myapplication.ui.animal.OverParentActivity;
 import com.dyoon.myapplication.ui.listview.ImageListActivity;
 import com.dyoon.myapplication.ui.listview.IndexListViewActivity;
 import com.dyoon.myapplication.ui.listview.LoadMoreActivity;
@@ -98,6 +99,8 @@ public class    MainActivity extends AppCompatActivity
     private Button indexListView;
     @ViewInject(R.id.btn_lifecycleTest_activity)
     private Button lifecycleTestActiviity;
+    @ViewInject(R.id.btn_animal_xml)
+    private Button animalXml;
     private Handler handler = new Handler() {
 
 /*        @Override
@@ -284,6 +287,7 @@ public class    MainActivity extends AppCompatActivity
 
                     }
                 });
+
             }
         });
 
@@ -554,5 +558,10 @@ public class    MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    @Event(value = R.id.btn_animal_xml)
+    private void animalXmlClick(View view) {
+        Intent intent = new Intent(this, OverParentActivity.class);
+        startActivity(intent);
+    }
 }
 

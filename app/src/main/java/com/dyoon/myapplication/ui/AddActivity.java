@@ -1,6 +1,7 @@
 package com.dyoon.myapplication.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.dyoon.myapplication.R;
@@ -20,4 +21,6 @@ public class AddActivity extends Activity {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
     }
+
+
 }

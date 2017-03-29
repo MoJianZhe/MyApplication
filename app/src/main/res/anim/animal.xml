@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <animator></animator>
+    <objectAnimator></objectAnimator>
+    <propertyValuesHolder></propertyValuesHolder>
+    <!--0.0到1.0，0.0是全透明，1.0是不透明-->
+    <alpha
+        android:duration="3000"
+        android:fromAlpha="0.1"
+        android:toAlpha="1.0"></alpha>
+
+    <!--旋转开始角度，正代表顺时针度数，负代表逆时针度数-->
+    <!--旋转点X轴坐标（数值、百分数、百分数p，
+      譬如50表示以当前View左上角坐标加50px为初始点、
+      50%表示以当前View的左上角加上当前View宽高的50%做为初始点、
+      50%p表示以当前View的左上角加上父控件宽高的50%做为初始点）
+      后面的以此类推
+      -->
+    <rotate
+        android:pivotY="0"
+        android:fromDegrees="45"
+        android:toDegrees="90"
+        android:pivotX="0">
+    </rotate>
+
+
+<!--初始X轴缩放比例，1.0表示无变化-->
+    <!--缩放点X轴坐标（数值、百分数、百分数p，
+      譬如50表示以当前View左上角坐标加50px为初始点、
+      50%表示以当前View的左上角加上当前View宽高的50%做为初始点、
+      50%p表示以当前View的左上角加上父控件宽高的50%做为初始点）
+      后面的以此类推
+      -->
+    <scale
+        android:pivotY="1"
+        android:pivotX="1"
+        android:fromXScale="1"
+        android:fromYScale="1"
+        android:toXScale="2"
+        android:toYScale="2"
+        ></scale>
+
+
+
+
+    <!--起始点X轴坐标（数值、百分数、百分数p，
+      譬如50表示以当前View左上角坐标加50px为初始点、
+      50%表示以当前View的左上角加上当前View宽高的50%做为初始点、
+      50%p表示以当前View的左上角加上父控件宽高的50%做为初始点）
+      后面的以此类推
+      -->
+    <translate
+        android:toXDelta="0"
+        android:toYDelta="0"
+        android:fromXDelta="50"
+        android:fromYDelta="50"
+    ></translate>
+</set>

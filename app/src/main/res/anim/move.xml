@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:duration="1000"
+        android:fromXDelta="0"
+        android:toXDelta="50%p"
+        android:fromYDelta="0"
+        android:toYDelta="50%p"
+        >
+        <!--起始点X轴坐标（数值、百分数、百分数p，
+        譬如50表示以当前View左上角坐标加50px为初始点、
+        50%表示以当前View的左上角加上当前View宽高的50%做为初始点、
+        50%p表示以当前View的左上角加上父控件宽高的50%做为初始点）-->
+    </translate>
+
+    <!--没想到的是动了又会回到原来的地方-->
+</set>

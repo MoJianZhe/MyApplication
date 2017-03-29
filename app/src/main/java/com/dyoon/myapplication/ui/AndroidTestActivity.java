@@ -14,7 +14,5 @@ public class AndroidTestActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate: " + String.valueOf("hello"));
-
-
     }
 }

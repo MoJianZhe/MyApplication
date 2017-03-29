@@ -39,6 +39,7 @@
         <activity android:name=".ui.listview.LoadMoreActivity"></activity>
         <activity android:name=".ui.listview.IndexListViewActivity"></activity>
         <activity android:name=".ui.LifecycleOfActivityTest"></activity>
+        <activity android:name=".ui.animal.OverParentActivity"></activity>
 
         <service android:name=".service.ServiceTest"></service>
         <service android:name=".service.MyIntentService"></service>
