@@ -3,7 +3,7 @@
     package="com.dyoon.myapplication">
 
     <application
-        android:name=".ui.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -40,6 +40,8 @@
         <activity android:name=".ui.listview.IndexListViewActivity"></activity>
         <activity android:name=".ui.LifecycleOfActivityTest"></activity>
         <activity android:name=".ui.animal.OverParentActivity"></activity>
+        <activity android:name=".ui.PxTestActivity"></activity>
+        <activity android:name=".ui.UrlConnectionActivity"></activity>
 
         <service android:name=".service.ServiceTest"></service>
         <service android:name=".service.MyIntentService"></service>

@@ -1,5 +1,7 @@
 package com.dyoon.myapplication.model;
 
+import android.app.Activity;
+
 import com.dyoon.myapplication.http.JsonResonseParser;
 
 import org.xutils.http.annotation.HttpResponse;

@@ -54,14 +54,10 @@ public class LifecycleOfActivityTest extends Activity {
     protected void onStart() {
         super.onStart();
         Log.i(TAG, "onStart: ");
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         getData();
         listView.setAdapter(new ThisAdapter(this,dataList));
-        Log.i(TAG, "onStart: "+"数据加载完成");
+        Log.i(TAG, "onStart: listview width:"+listView.getWidth());
 
     }
 
@@ -77,14 +73,24 @@ public class LifecycleOfActivityTest extends Activity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume: listview width:"+listView.getWidth());
+    }
+
+    @Override
     protected void onPause() {
-        Log.i(TAG, "onPause: ");
         super.onPause();
     }
 
     @Override
     protected void onStop() {
         Log.i(TAG, "onStop: ");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Toast.makeText(this, "OnStop方法执行中", Toast.LENGTH_LONG).show();
         super.onStop();
     }

@@ -1,4 +1,4 @@
-package com.dyoon.myapplication.ui;
+package com.dyoon.myapplication;
 
 import android.app.ActivityManager;
 import android.app.Application;
@@ -23,6 +23,9 @@ public class MyApplication extends Application {
         int heapSize=manager.getMemoryClass();
         Log.i(TAG, "onCreate: 当前手机允许app的最大内存是："+heapSize+"M");
         Log.i(TAG, "onCreate: "+manager.getDeviceConfigurationInfo().toString());
+
+        CrashHandler ch=CrashHandler.getInstance();
+        ch.init(this);
 
     }
 }

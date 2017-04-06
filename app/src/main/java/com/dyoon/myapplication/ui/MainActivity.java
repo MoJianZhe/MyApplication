@@ -31,6 +31,7 @@ import com.dyoon.myapplication.ui.animal.OverParentActivity;
 import com.dyoon.myapplication.ui.listview.ImageListActivity;
 import com.dyoon.myapplication.ui.listview.IndexListViewActivity;
 import com.dyoon.myapplication.ui.listview.LoadMoreActivity;
+import com.j256.ormlite.stmt.query.In;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -101,6 +102,8 @@ public class    MainActivity extends AppCompatActivity
     private Button lifecycleTestActiviity;
     @ViewInject(R.id.btn_animal_xml)
     private Button animalXml;
+    @ViewInject(R.id.px_test)
+    private Button pxTest;
     private Handler handler = new Handler() {
 
 /*        @Override
@@ -561,6 +564,12 @@ public class    MainActivity extends AppCompatActivity
     @Event(value = R.id.btn_animal_xml)
     private void animalXmlClick(View view) {
         Intent intent = new Intent(this, OverParentActivity.class);
+        startActivity(intent);
+    }
+
+    @Event(value = R.id.px_test)
+    private void pxtestClick(View view) {
+        Intent intent = new Intent(this, UrlConnectionActivity.class);
         startActivity(intent);
     }
 }
