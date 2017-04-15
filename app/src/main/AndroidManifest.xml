@@ -16,9 +16,25 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+               <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+
+        <activity-alias
+            android:enabled="false"
+            android:label="应用程序"
+            android:name=".ui.AliasActivity"
+            android:targetActivity=".ui.MainActivity"
+            android:icon="@color/cardview_dark_background">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity-alias>-->
+
+
+
         <activity android:name=".ui.SecondActivity"></activity>
         <activity android:name=".ui.PopupWindow"></activity>
         <activity android:name=".ui.Expandable"></activity>

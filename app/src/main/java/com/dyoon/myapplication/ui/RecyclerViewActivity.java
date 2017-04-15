@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.view.ActionMode;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 
 import com.dyoon.myapplication.adapter.RecyclerViewAdapter;
 import com.dyoon.myapplication.R;
+import com.dyoon.myapplication.ui.animal.RecycleViewItemAnimal;
+import com.dyoon.myapplication.ui.animal.TestAnimator;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -38,7 +41,7 @@ public class RecyclerViewActivity extends Activity {
     @ViewInject(R.id.txt)
     private TextView textView;
     private List<String> list = new ArrayList<>();
-    private android.view.ActionMode actinMode;
+    private android.view.ActionMode actionMode;//目录
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +54,13 @@ public class RecyclerViewActivity extends Activity {
         recyclerView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                actinMode = startActionMode((android.view.ActionMode.Callback) callback);
+                actionMode = startActionMode((android.view.ActionMode.Callback) callback);
                 v.setSelected(true);
                 return true;
             }
         });
+        Log.i(TAG, "onCreate: 开始animator");
+        recyclerView.setItemAnimator(new RecycleViewItemAnimal());
     }
 
     public void  getData() {
@@ -66,7 +71,9 @@ public class RecyclerViewActivity extends Activity {
                     @Override
                     public void run() {
                         for(int i=0;i<5;i++) {
+                            Log.i(TAG, "run: add"+i);
                             list.add("I是"+i);
+                            swipeRefreshLayout.setRefreshing(false);
                         }
                     }
                 }, 5000);
@@ -82,6 +89,8 @@ public class RecyclerViewActivity extends Activity {
         list.add("eight");
         list.add("nine");
     }
+
+
 
     private class MyActionModelCallback implements ActionMode.Callback {
 
@@ -102,11 +111,11 @@ public class RecyclerViewActivity extends Activity {
             switch (item.getItemId()) {
                 case R.id.test:
                     Log.i(TAG, "onActionItemClicked: you click test");
-                    actinMode.finish();
+                    actionMode.finish();
                     break;
                 case R.id.test2:
                     Log.i(TAG, "onActionItemClicked: you click test2");
-                    actinMode.finish();
+                    actionMode.finish();
                     break;
             }
             return false;

@@ -155,6 +155,12 @@
                 android:textAllCaps="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/changLaunchIcon"
+                android:textAllCaps="false"
+                android:text="changLaunchIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
 

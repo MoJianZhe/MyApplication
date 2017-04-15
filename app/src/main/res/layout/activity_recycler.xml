@@ -33,9 +33,4 @@
             </ScrollView>
 
         </android.support.v4.widget.SwipeRefreshLayout>
-
-
-
-
-
     </LinearLayout>

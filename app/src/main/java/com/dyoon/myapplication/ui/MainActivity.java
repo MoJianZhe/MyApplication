@@ -1,8 +1,10 @@
 package com.dyoon.myapplication.ui;
 
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -104,6 +106,8 @@ public class    MainActivity extends AppCompatActivity
     private Button animalXml;
     @ViewInject(R.id.px_test)
     private Button pxTest;
+    @ViewInject(R.id.changLaunchIcon)
+    private Button changLaunchIcon;
     private Handler handler = new Handler() {
 
 /*        @Override
@@ -572,5 +576,32 @@ public class    MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, UrlConnectionActivity.class);
         startActivity(intent);
     }
+
+    @Event(value = R.id.changLaunchIcon)
+    private void setChangLaunchIconClick(View view) {
+        Log.i(TAG, "setChangLaunchIconClick: ");
+        PackageManager manager=getApplicationContext().getPackageManager();
+        disEnabledComponent(spalash,manager);
+        enabledComponent(alias,manager);
+    }
+
+
+    ComponentName spalash=new ComponentName(getBaseContext(),
+            "com.dyoon.myapplication.ui.MainActivity");
+    ComponentName alias=new ComponentName(getBaseContext(),
+            "com.dyoon.myapplication.ui.AliasActivity");
+
+    private void enabledComponent(ComponentName name,PackageManager manager) {
+        manager.setComponentEnabledSetting(name,
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP);
+    }
+
+    private void disEnabledComponent(ComponentName name,PackageManager manager) {
+        manager.setComponentEnabledSetting(name,
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP);
+    }
+
 }
 
